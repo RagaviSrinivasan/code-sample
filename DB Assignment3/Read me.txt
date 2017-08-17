@@ -1,0 +1,78 @@
+Assignment Description:
+	1) Schema Creation and Data Loading into the tables, Majestic, Majestic_index1, Majestic_index2, Majestic_index3
+	2) Query the tables for top domains
+	3) Calculate the execution time for the queries and write an explanation
+	4) Curl test the queries
+	5) Apache JMeter testing
+
+
+Time taken to load data into tables:
+
+Majestic
+
+real 19.107s
+user 3.756s
+sys 0.286s
+
+
+Majestic_index1
+
+real 31.918s
+user 3.760s
+sys 0.282s
+
+
+Majestic_index2
+
+real 27.443s
+user 3.745s
+sys 0.276s
+
+Majestic_index3
+
+real 33.635s
+user 3.778s
+sys 0.256s
+
+The execution time for an insert statement in a table with no index is the fastest while that for a table with two index is the slowest. Hence insertion into MAJESTIC table (no index) takes least time where as insertion into MAJESTIC_INDEX3 (with two indexes) has the most time.
+
+Time taken to execute query 1 in table:
+MAJESTIC        :00:00:02.20
+MAJESTIC_INDEX1 :00:00:01.77
+MAJESTIC_INDEX2 :00:00:01.58
+MAJESTIC_INDEX3 :00:00:05.32
+
+Time taken to execute query 2 in table:
+MAJESTIC        :00:00:00.12
+MAJESTIC_INDEX1 :00:00:00.10
+MAJESTIC_INDEX2 :00:00:00.11
+MAJESTIC_INDEX3 :00:00:00.79
+
+Time taken to execute query 3 in table:
+MAJESTIC        :00:00:00.08
+MAJESTIC_INDEX1 :00:00:00.06
+MAJESTIC_INDEX2 :00:00:00.06
+MAJESTIC_INDEX3 :00:00:00.27
+
+In MAJESTIC_INDEX1, TLD column is indexed, in MAJESTIC_INDEX2 RefSubNets column is indexed, in MAJESTIC_INDEX3 TLD and RefIPs columns are indexed.
+Single column indexing increases the query retrieval performance than other. 
+
+PART 2 files included:
+majestic.js 
+majestic.html - all entry forms for both queries in the same html file (8 forms in total)
+error.html
+result.html
+
+
+Execution of CURL:
+
+There are 8 queries total: (2 queries x 4 tables)
+
+Time taken to execute query1 in MAJESTIC table		:0m0.247s
+Time taken to execute query1 in MAJESTIC_INDEX1 table	:0m0.251s
+Time taken to execute query1 in MAJESTIC_INDEX2 table	:0m0.236s
+Time taken to execute query1 in MAJESTIC_INDEX3 table	:0m0.256s
+Time taken to execute query2 in MAJESTIC table		:0m0.243s
+Time taken to execute query2 in MAJESTIC_INDEX1 table	:0m0.193s
+Time taken to execute query2 in MAJESTIC_INDEX2 table	:0m0.248s
+Time taken to execute query2 in MAJESTIC_INDEX3 table	:0m0.187s

@@ -1,0 +1,1 @@
+time curl --data "domain=wikipedia.org" http://csgrads1.utdallas.edu:5001/majestic/domain/idx1

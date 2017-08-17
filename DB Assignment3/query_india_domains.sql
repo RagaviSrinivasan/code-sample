@@ -1,0 +1,19 @@
+SET TIMING ON;
+
+SELECT Domain, GlobalRank, RefSubNets
+FROM MAJESTIC
+WHERE TLD='in';
+
+SELECT Domain, GlobalRank, RefSubNets
+FROM MAJESTIC_INDEX1
+WHERE TLD='in';
+
+SELECT Domain, GlobalRank, RefSubNets
+FROM MAJESTIC_INDEX2
+WHERE TLD='in';
+
+SELECT Domain, GlobalRank, RefSubNets
+FROM MAJESTIC_INDEX3
+WHERE TLD='in';
+
+SET TIMING OFF;

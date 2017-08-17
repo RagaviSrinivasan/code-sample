@@ -1,0 +1,1 @@
+time curl --data "domain=actor" http://csgrads1.utdallas.edu:5001/majestic/tld/no_idx
